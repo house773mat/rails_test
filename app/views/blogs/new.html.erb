@@ -6,7 +6,7 @@
     </ul>
 <% end %>
 
-<%= form_with(model: @blog, local: true) do |f| %>
+<%= form_with(model: @blog, local: true, url: confirm_blogs_path ) do |f| %>
   <%= f.label :title  %>
   <%= f.text_field :title %>
 
