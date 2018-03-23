@@ -1,5 +1,13 @@
 <h3>以下の内容でポスト</h3>
 
+<% if @blog.errors.any? %>
+    <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+
 <%= form_with(model: @blog, local: true) do |f| %>
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
